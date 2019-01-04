@@ -77,5 +77,3 @@ for model in iphoneCatalog {
     print(model.name)
 }
 //: [Next](@next)
-
-

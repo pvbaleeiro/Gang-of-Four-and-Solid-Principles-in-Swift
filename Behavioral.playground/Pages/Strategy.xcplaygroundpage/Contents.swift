@@ -40,4 +40,47 @@ mainBot.respond(inputString: "Hello Bot")
 mainBot.responder = englishResponder
 mainBot.respond(inputString: "Hello Bot")
 
+
+// Victor's code
+protocol CharacterState {
+    func enterState()
+}
+
+class GoodGuy {
+    
+    private var characterState: CharacterState?
+    
+    func setState(cs: CharacterState) {
+        self.characterState = cs
+        characterState?.enterState()
+    }
+}
+
+class RunningState : CharacterState{
+    
+    func enterState() {
+        print("Entering running state")
+    }
+}
+
+class StandingState : CharacterState{
+    
+    func enterState() {
+        print("Entering standing state")
+    }
+}
+
+class WalkingState : CharacterState{
+    
+    func enterState() {
+        print("Entering walking state")
+    }
+}
+
+let goodGuy = GoodGuy()
+
+goodGuy.setState(cs: WalkingState())
+goodGuy.setState(cs: StandingState())
+goodGuy.setState(cs: RunningState())
+
 //: [Next](@next)
