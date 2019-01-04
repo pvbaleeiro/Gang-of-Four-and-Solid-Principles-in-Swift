@@ -54,7 +54,7 @@ for job in jobs{
 }
 
 
-// Victor code
+// Victor's code
 class Despesa {
     
     private var _total = Int()
